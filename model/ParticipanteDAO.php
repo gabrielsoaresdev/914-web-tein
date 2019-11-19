@@ -32,5 +32,29 @@ class ParticipanteDAO {
         else
             return 0;
     }
+    
+    function selectParticipanteById() {
+        $stmt = $this->conexao->prepare("SELECT * FROM participantes");
+        $stmt->execute();
+        if($row = $stmt->fetch())
+            return new Participante($row['id'], $row['idade'], $row['peso'],
+                    $row['freq_cardiaca_bpm'], $row['altura'], $row['curso'], $row['nivel']);
+        else
+            return null;
+    }
+
+    function updateTempo($id, $tempo) {
+        $stmt = $this->conexao->prepare("UPDATE participantes SET tempo_sec = :t WHERE id = :i");
+        $stmt ->bindValue(":t", $tempo);
+        $stmt ->bindValue(":i", $id);
+        $stmt->execute();
+    }
+
+    function updateQntQuestoes($id, $acerto) {
+        $stmt = $this->conexao->prepare("UPDATE participantes SET qnt_questoes = :a WHERE id = :i");
+        $stmt ->bindValue(":a", $acerto);
+        $stmt ->bindValue(":i", $id);
+        $stmt->execute();
+    }
 }
 ?>
