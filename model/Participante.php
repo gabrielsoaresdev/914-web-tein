@@ -7,9 +7,10 @@ class Participante {
     private $altura;
     private $curso;
     private $nivel;
-
+    private $acertos;
+    private $tempo;
     function __construct($id, $idade, $peso, $frequenciaCardiaca, 
-            $altura, $curso, $nivel) {
+            $altura, $curso, $nivel, $acertos, $tempo) {
         $this->id = $id;
         $this->idade = $idade;
         $this->peso = $peso;
@@ -17,6 +18,8 @@ class Participante {
         $this->altura = $altura;
         $this->curso = $curso;
         $this->nivel = $nivel;
+        $this->acertos = $acertos;
+        $this->tempo = $tempo;
     }
 
     function getId() {
@@ -73,6 +76,22 @@ class Participante {
 
     function setNivel($nivel) {
         $this->nivel = $nivel;
+    }
+    
+    function getAcertos() {
+        return $this->acertos;
+    }
+
+    function setAcertos($acertos) {
+        $this->acertos = $acertos;
+    }
+    
+    function getTempo() {
+        return $this->tempo;
+    }
+
+    function setTempo($tempo) {
+        $this->tempo = $tempo;
     }
 }
 

@@ -29,6 +29,10 @@ class ParticipanteController {
     function updateAcertos($id, $acertos) {
         return $this->dao->updateQntQuestoes($id, $acertos);
     }
+    
+    function buscarAcertosEFrequenciaCardiaca() {
+        return $this->dao->selectAcertosAndFrequencia();
+    }
 }
 
 if(isset($_POST['q1'], $_POST['q2'], $_POST['q3'], $_POST['q4'])) {
@@ -41,4 +45,5 @@ if(isset($_POST['q1'], $_POST['q2'], $_POST['q3'], $_POST['q4'])) {
         }
     }
     $controller->updateAcertos($_POST['id'], $acertos);
+    header('Location: ../view/index.php');
 }

@@ -38,7 +38,8 @@ class ParticipanteDAO {
         $stmt->execute();
         if($row = $stmt->fetch())
             return new Participante($row['id'], $row['idade'], $row['peso'],
-                    $row['freq_cardiaca_bpm'], $row['altura'], $row['curso'], $row['nivel']);
+                    $row['freq_cardiaca_bpm'], $row['altura'], $row['curso'],
+                    $row['nivel'], $row['qnt_questoes'], $row['tempo_sec']);
         else
             return null;
     }
@@ -55,6 +56,17 @@ class ParticipanteDAO {
         $stmt ->bindValue(":a", $acerto);
         $stmt ->bindValue(":i", $id);
         $stmt->execute();
+    }
+    
+    function selectAcertosAndFrequencia() {
+        $stmt = $this->conexao->prepare("SELECT freq_cardiaca_bpm, qnt_questoes, tempo_sec "
+                . "FROM participantes WHERE qnt_questoes != 0 AND tempo_sec != 0");
+        $stmt->execute();
+        $participantes = array();
+        while($row = $stmt->fetch())
+            array_push ($participantes, new Participante(0, 0, 0,
+                    $row['freq_cardiaca_bpm'], 0, 0, 0, $row['qnt_questoes'], 0, $row['tempo_sec']));
+        return $participantes;
     }
 }
 ?>

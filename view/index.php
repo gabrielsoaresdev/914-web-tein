@@ -15,37 +15,38 @@
     <form method="POST" action="quiz.php">
         <div class="form-group">
             <label for="idade">Idade:</label>
-            <input class="form-control" name="idade" type="number">
+            <input class="form-control" name="idade" type="number" required>
         </div>
         <div class="form-group">
             <label for="peso">Peso:</label>
-            <input class="form-control" name="peso" type="number">
+            <input class="form-control" name="peso" type="number" required>
         </div>
         <div class="form-group">
             <label for="freq">Frequência cardíaca (BPM):</label>
-            <input class="form-control" name="freq" type="number">
+            <input class="form-control" name="freq" type="number" required>
         </div>
         <div class="form-group">
             <label for="altura">Altura:</label>
-            <input class="form-control" name="altura" type="number">
+            <input class="form-control" name="altura" type="number" required>
         </div>
         <div class="form-group">
             <label for="curso">Curso:</label>
-            <input class="form-control" name="curso">
+            <input class="form-control" name="curso" required>
         </div>
         <div class="form-group">
             <label for="peso">Peso:</label>
-            <input class="form-control" name="peso" type="number">
+            <input class="form-control" name="peso" type="number" required>
         </div>
         <div class="form-group">
             <label for="nivel">Nível de facilidade em questões de lógica</label>
-            <select class="form-control" name="nivel">
+            <select class="form-control" name="nivel" required>
                 <option value="1">Baixo</option>
                 <option value="2">Médio</option>
                 <option value="3">Alto</option>
             </select>
         </div>
           <button type="submit" class="btn btn-primary">Iniciar</button>
+          <a href="download.php" class="btn btn-success">Baixar dados (.csv)</a> 
     </form>
 
     <!-- Optional JavaScript -->

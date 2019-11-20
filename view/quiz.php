@@ -5,7 +5,7 @@ $controller = new ParticipanteController();
 if(isset($_POST['idade'], $_POST['peso'], $_POST['freq'], $_POST['altura'],
         $_POST['curso'], $_POST['nivel'])) {
     $participante = new Participante(0, $_POST['idade'], $_POST['peso'],
-        $_POST['freq'], $_POST['altura'], $_POST['curso'], $_POST['nivel']);
+        $_POST['freq'], $_POST['altura'], $_POST['curso'], $_POST['nivel'], 0, 0);
 }
 else if (isset($_GET['id'])) {
     $participante = $controller->getParticipante($_GET['id']);
