@@ -65,7 +65,7 @@ class ParticipanteDAO {
         $participantes = array();
         while($row = $stmt->fetch())
             array_push ($participantes, new Participante(0, 0, 0,
-                    $row['freq_cardiaca_bpm'], 0, 0, 0, $row['qnt_questoes'], 0, $row['tempo_sec']));
+                    $row['freq_cardiaca_bpm'], 0, 0, 0, $row['qnt_questoes'], $row['tempo_sec']));
         return $participantes;
     }
 }
