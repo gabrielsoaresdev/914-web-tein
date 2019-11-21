@@ -34,10 +34,6 @@
             <input class="form-control" name="curso" required>
         </div>
         <div class="form-group">
-            <label for="peso">Peso:</label>
-            <input class="form-control" name="peso" type="number" required>
-        </div>
-        <div class="form-group">
             <label for="nivel">Nível de facilidade em questões de lógica</label>
             <select class="form-control" name="nivel" required>
                 <option value="1">Baixo</option>
