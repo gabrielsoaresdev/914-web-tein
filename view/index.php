@@ -27,7 +27,7 @@
         </div>
         <div class="form-group">
             <label for="altura">Altura:</label>
-            <input class="form-control" name="altura" type="number" required>
+            <input step=".01" class="form-control" name="altura" type="number" required>
         </div>
         <div class="form-group">
             <label for="curso">Curso:</label>
