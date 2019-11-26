@@ -39,13 +39,11 @@ if(isset($_POST['q1'], $_POST['q2'], $_POST['q3'], $_POST['q4'])) {
     $controller = new ParticipanteController();
     $controller->updateTempo($_POST['id'], $_POST['tempo']);
     $acertos = 0;
-    for($i = 1; $i <= 4; $i++) {
+    for($i = 1; $i <= 6; $i++) {
         if($_POST['q'.$i] == 'true') {
-            echo "q$i = " . $_POST['q'.$i];
             $acertos++;
         }
     }
-    echo $acertos;
     $controller->updateAcertos($_POST['id'], $acertos);
     //header('Location: ../view/index.php');
 }
